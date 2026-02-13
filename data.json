@@ -1,0 +1,984 @@
+[
+  {
+    "name": "West Limegrave",
+    "level": "Level: 1~10 Upgrades: 0 ~ +1",
+    "tasks": [
+      {
+        "name": "Obtain Whetstone Knife",
+        "wiki": "Whetstone+Knife",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/whetstone_knife-elden-ring-wiki-guide-200px.png"
+      },
+      {
+        "name": "Obtain Limgrave West Map Fragment",
+        "wiki": "Map+(Limgrave,+West)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map_limgrave_west_key_items_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "boc-seamster-quest",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "find-sellen",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Talk to Roderika",
+        "wiki": "Roderika",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/woman_with_a_red_hood_npc_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Find Ashes of War Merchant",
+        "wiki": "Iron+Fist+Alexander",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/warmasters_shack_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "meet-potboy",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Talk to D, Hunter of the Dead",
+        "wiki": "D+Hunter+of+the+Dead",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/d-hunter-of-the-dead-npc-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Complete Murkwater Cave",
+        "wiki": "Murkwater+Cave",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/murkwater_cave_locations_elden_ring_wiki_guide_300x.jpg"
+      }
+    ]
+  },
+  {
+    "name": "East Limegrave",
+    "level": "Level: 5~10 Upgrades: +1 ~ +2",
+    "tasks": [
+      {
+        "name": "Talk to Kenneth Haight",
+        "wiki": "Kenneth+Haight",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/kenneth_haight_npcs_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "get the flask of wondrous physik",
+        "wiki": "flask+of+wondrous+physick",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/flask_of_wondrous_physick_tools_consumables_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Get Limgrave, East Map Fragment",
+        "wiki": "Map+(Limgrave,+East)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-limgrave,-east_key-items-elden-ring-wiki-guide-200.png"
+      },
+      {
+        "name": "Get Flask Materials from Minor Erdtree",
+        "wiki": "Minor+Erdtree+(Mistwood)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/minor-erdtree-weeping-peninsula-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Activate Siofra River Well",
+        "wiki": "Siofra+River",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/siofra-river-a-locations-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Trigger Blaidd event",
+        "wiki": "Blaidd",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/blaidd-wolfman-location2-npc-elden-ring-wiki-300px-min.jpeg"
+      },
+      {
+        "name": "Liberate Fort Haight",
+        "wiki": "Fort+Haight",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/post-town-remains-ruined-cellar-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Get Reward from Kenneth Haight",
+        "wiki": "Kenneth+Haight",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/kenneth_haight_npcs_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Complete Summonwater",
+        "wiki": "Summonwater+Village",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/post-town-remains-ruined-cellar-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Talk to D, Hunter of the Dead at the Roundtable Hold.",
+        "wiki": "D+Hunter+of+the+Dead",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/d-hunter-of-the-dead-npc-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "*Teleport to Bestial Sanctum",
+        "wiki": "Bestial+Sanctum",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bestial-sanctuary-location-elden-ring-wiki-guide.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Southern Limegrave & Weeping Peninsula",
+    "level": "Level: 20 Upgrades: 3+",
+    "tasks": [
+      {
+        "name": "Meet Yura",
+        "wiki": "Bloody+Finger+Hunter+Yura",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/bloody-finger-hunter-yura-npc-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Kill Dragon Agheel",
+        "wiki": "Flying+Dragon+Agheel",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/flying_dragon_agheel_wildlife_creature_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Obtain Royal House Scroll",
+        "wiki": "Royal+House+Scroll",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/royal_house_scroll-elden-ring-wiki-guide-200px.png"
+      },
+      {
+        "name": "Talk to Irina",
+        "wiki": "Rennala+Queen+of+the+Full+Moon",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/irina_npcs_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "default-knights-cavalry",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Obtain memory slot",
+        "wiki": "Interactive+Map?id=817&lat=-210.828125&lng=95.226796&zoom=8",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/oridyss-rise-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "get-sacred-tears-1",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Flask Materials from Erdtree",
+        "wiki": "Minor+Erdtree+(Weeping+Peninsula)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/minor-erdtree-weeping-peninsula-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Complete Castle Morne",
+        "wiki": "Castle+Morne",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/castle-mourne-locationpreview-elden-ring-wiki-guide-300px-min.jpeg"
+      }
+    ]
+  },
+  {
+    "name": "Stormveil Castle",
+    "level": "Level: 30~40 Upgrades: +3 ~ +4",
+    "tasks": [
+      {
+        "name": "Take the alternate entrance to the Stormveil Castle",
+        "wiki": "Stormveil+Castle",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/back-entrance-stormveil-castle-walkthrough-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Defeat the Banished Knight and retrieve the Rusty Key",
+        "wiki": "Banished+Knight",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/banished-knight-enemy-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Obtain the Stonesword Key",
+        "wiki": "Stonesword+Key",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/stonesword_key-elden-ring-wiki-guide-200px.png"
+      },
+      {
+        "name": "Use the Key to dispel the fog in front of the gates and enter",
+        "wiki": "Stormveil+Castle",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/stonesword_key-elden-ring-wiki-guide-200px.png"
+      },
+      {
+        "name": "Locate Nepheli Loux and speak to her",
+        "wiki": "Nepheli+Loux",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/nepheli-loux-npc-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Fight the Lion Guardian Mini-boss",
+        "wiki": "Lion+Guardian",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lion-guardian-enemy-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Prepare for a Boss battle and summon Nepheli",
+        "wiki": "Nepheli+Loux",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/nepheli-loux-npc-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "restore-godricks-great-rune",
+        "wiki": "",
+        "img": ""
+      }
+    ]
+  },
+  {
+    "name": "Liurnia of the Lakes South",
+    "level": "Level: 40~50 Upgrades: +3 ~ +4",
+    "tasks": [
+      {
+        "name": "Talk to Boc the Seamster",
+        "wiki": "Boc+the+Seamster",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/boc_npcs_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Meet Sorcerer Thops",
+        "wiki": "Thops",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/thops_npc_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Obtain Academy Scroll",
+        "wiki": "Academy+Scroll",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/academy-scroll_spells-elden-ring-wiki-guide-200.png"
+      },
+      {
+        "name": "obtain-fire-monks-prayerbook",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Liurnia of the Lakes map fragments",
+        "wiki": "Liurnia+of+the+Lakes",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-liurna,-east_key-items-elden-ring-wiki-guide-200.png"
+      },
+      {
+        "name": "start-ryas-questline",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Cookbooks & Ritual Pot",
+        "wiki": "Ritual+Pot",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ritual_pot_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Meet Patches and Get Flask Upgrades",
+        "wiki": "Patches",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/patches_bosses_elden_ring_wiki_guide_300x.jpg"
+      },
+      {
+        "name": "Visit Rose Church",
+        "wiki": "Rose+Church",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/rose_church_location_elden_ring_wiki_guide_300x.jpg"
+      },
+      {
+        "name": "complete-malefactors-evergoal",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Loot Sacrificial Twig",
+        "wiki": "Sacrificial+Twig",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sacrificial_twig_talisman_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Obtain Raya Lucaria Academy Key",
+        "wiki": "",
+        "img": ""
+      }
+    ]
+  },
+  {
+    "name": "Raya Lucaria Academy",
+    "level": "Level: 50~60 Upgrades: +4 ~ +6",
+    "tasks": [
+      {
+        "name": "Acquire the Academy Glintstone Key",
+        "wiki": "Academy+Glintstone+Key",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/academy-glintstone-key_key-items-elden-ring-wiki-guide-200.png"
+      },
+      {
+        "name": "Pick up Several Ashes",
+        "wiki": "Ashes+of+War",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/quality_upgrade_affinity_elden_ring_wiki_guide_60px.jpg"
+      },
+      {
+        "name": "Obtain Gravity Well Sorcery",
+        "wiki": "Gravity+Well",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/gravity_well_sorcery_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Get Carian Knight Set",
+        "wiki": "Carian+Knight+Set",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/carian-knight-armor-set-elden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Get Conspectus Scroll",
+        "wiki": "Conspectus+Scroll",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/conspectus_scroll_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Get Olivinus Glintstone Crown and Ritual Pot",
+        "wiki": "Olivinus+Glintstone+Crown",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/olivinus_glintstone_crown_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Defeat Red Wolf of Radagon",
+        "wiki": "Red+Wolf+of+Radagon",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/red-wolf-of-radagon.jpg"
+      },
+      {
+        "name": "Access Secret Radagon Upstairs Area",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Stonesword Key, Golden Seed and Karolos Glintstone Crown",
+        "wiki": "Karolos+Glintstone+Crown",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/karolos_glintstone_crown_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Explore Upper Rooftops",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Imbued Sword Key",
+        "wiki": "Imbued+Sword+Key",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/imbued-sword-key-elden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Loot Academy Glintstone Key",
+        "wiki": "Academy+Glintstone+Key",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/academy-glintstone-key_key-items-elden-ring-wiki-guide-200.png"
+      },
+      {
+        "name": "Defeat Moongrum, Carian Knight",
+        "wiki": "Moongrum+Carian+Knight",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/moongrum-carian-knight-hostile-npc-enemy-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Deal with Iron Ball Trap",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Defeat Rennala, Queen of the Full Moon",
+        "wiki": "Rennala+Queen+of+the+Full+Moon",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/renala_bosses_elden_ring_wiki_guide_300px.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Liurnia of the Lakes East",
+    "level": "Level: 50~60 Upgrades: +4 ~ +6",
+    "tasks": [
+      {
+        "name": "Get Kaiden Sellsword Ashes",
+        "wiki": "Kaiden+Sellsword+Ashes",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/kaiden_sellsword_ashes_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Get Shabriri Grape at Purified Ruins and Talk to Hyetta",
+        "wiki": "Purified+Ruins",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/purefied-ruins-location-elden-ring-wiki-300px-min-min.jpeg"
+      },
+      {
+        "name": "Get Cookbook & Staff at Highway Lookout Tower",
+        "wiki": "Highway+Lookout+Tower",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/carian_glintblade_staff_glintstonestaff_weapon_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "kill-knighs-cavalry-2",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Defeat Tibia Mariner",
+        "wiki": "Tibia+Mariner",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/tibia-mariner_ground_boss_enemies_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Obtain Dragon Cult Prayerbook",
+        "wiki": "Dragon+Cult+Prayerbook",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragon_cult_prayerbook_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Visit Church of Vows",
+        "wiki": "Church+of+Vows",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/church_of_vows_locations_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Obtain Flask Upgrades from Minor Erdtree",
+        "wiki": "Minor+Erdtree+(Liurnia+Northeast)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/minor_erdtree_(liurnia_northeast)_full_map_elden_ring_wiki_guide_600px.jpg"
+      },
+      {
+        "name": "Unlock Walking Mausoleum",
+        "wiki": "Walking+Mausoleum",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/walking-mausoleum-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Get upgrades from Raya Lucaria Crystal Tunnel",
+        "wiki": "Raya+Lucaria+Crystal+Tunnel",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/raya_lucaria_crystal_tunnel_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Visit Frenzied Flame Village",
+        "wiki": "Frenzied+Flame+Village",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/frenzied_flame_village_full_map_elden_ring_wiki_guide_600px.jpg"
+      },
+      {
+        "name": "Obtain powerful spells from Converted Fringe Tower",
+        "wiki": "Converted+Fringe+Tower",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/converted_fringe_tower_full_map_elden_ring_wiki_guide_600px.jpg"
+      },
+      {
+        "name": "Unlock Ainsel River Well",
+        "wiki": "Ainsel+River+Well",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ainsel-river-well-location-elden-ring-wiki-guide.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Ainsel River (Underground)",
+    "level": "Level: 50~60 Upgrades: +4 ~ +6",
+    "tasks": [
+      {
+        "name": "Collect Upgrade Materials",
+        "wiki": "",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/smithing_stone_3_upgrade_material_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Find Nomadic Merchant",
+        "wiki": "Wandering+Merchant+Ainsel+River",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/nomadic-merchant-ainsel-river-npcs-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Collect Immunizing Horn Charm",
+        "wiki": "Immunizing+Horn+Charm",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/immunizing_horn_charm_talisman_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Defeat Dragonkin Soldier of Nokstella",
+        "wiki": "Dragonkin+Soldier+of+Nokstella",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragonkin_soldier_of_nokstella_boss_enemies_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Loot Boss Room",
+        "wiki": "Ainsel+River",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/95b56d97-cb83-4ef1-869e-a639449252c9.png"
+      }
+    ]
+  },
+  {
+    "name": "Liurnia of the Lakes West",
+    "level": "Level: 60~70 Upgrades: +8 ~ +12",
+    "tasks": [
+      {
+        "name": "Begin Exploration from South to North",
+        "wiki": "Liurnia+of+the+Lakes",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/liurnia-of-the-lakes-hub-location-preview-elden-ring-wiki-guide-300px.jpeg"
+      },
+      {
+        "name": "Find Village of the Aulbinaurics",
+        "wiki": "Village+of+the+Albinaurics",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/village_of_the_albinaurics_location_elden_ring_wiki_guide_300x.jpg"
+      },
+      {
+        "name": "Loot Secret Medallion Key",
+        "wiki": "Haligtree+Secret+Medallion+(Right)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/haligtree-secret-medalllion-right-key-itemselden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Complete Optional Objectives",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Loot Flask Upgrades",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Visit The Four Belfries",
+        "wiki": "The+Four+Belfries",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/d0d26f10-73a9-4213-9838-bce38e7ec370.png"
+      },
+      {
+        "name": "Obtain Map Fragment",
+        "wiki": "Map+(Liurnia,+West)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map_liurnia_west_key_items_elden_ring_wiki_guide.png"
+      },
+      {
+        "name": "Talk to Smithing Master Iji",
+        "wiki": "War+Counselor+Iji",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map_liurnia_west_key_items_elden_ring_wiki_guide.png"
+      },
+      {
+        "name": "Complete Caria Manor",
+        "wiki": "Caria+Manor",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/caria_manor_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Meet Ranni and her allies",
+        "wiki": "Ranni+the+Witch",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fmlgngpvcacmvf4.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Siofra River (underground)",
+    "level": "Level: 60+ Upgrades: +8 ~ +12",
+    "tasks": [
+      {
+        "name": "Obtain Map Fragment",
+        "wiki": "Map+(Siofra+River)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map-siofra-river-key-item-elden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Light the Fire Pillars",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Collect Spells & Talismans",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Defeat Dragonkin Soldier",
+        "wiki": "Dragonkin+Soldier",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragonkin-soldier-boss-enemies-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Obtain Golden Seed",
+        "wiki": "Golden+Seed",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_seed_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Unlock Deep Siofra Well",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Defeat Ancestor Spirit",
+        "wiki": "Ancestor+Spirit",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ancestor_spirit.png"
+      }
+    ]
+  },
+  {
+    "name": "Caelid (South)",
+    "level": "Level: 60+ Upgrades: +10 ~ +12",
+    "tasks": [
+      {
+        "name": "Complete Smoldering Church",
+        "wiki": "Smoldering+Church",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/smoldering-church-locations-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Obtain Flask & Spirit Upgrades",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Get Golden Scarab talisman",
+        "wiki": "Golden+Scarab",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/gold_scarab_talisman_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Find Iron Fist Alexander",
+        "wiki": "Iron+Fist+Alexander",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/alexander_npc_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Clear Fort Gael",
+        "wiki": "Fort+Gael",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fort-gael-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Obtain Map Fragments",
+        "wiki": "Map+(Caelid)",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/map_caelid_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Unlock Zone Merchants",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "defeat-dragon-deathbird",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Loot Sellia Crystal Tunnels",
+        "wiki": "Sellia+Crystal+Tunnel",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sellia_crystal_tunnel_map_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Meet Gowry and Millicent",
+        "wiki": "Gowry",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/gowry-location-npc-elden-ring-wiki-300px-min-min.jpeg"
+      },
+      {
+        "name": "Complete Sellia, Town of Sorcery",
+        "wiki": "Sellia,+Town+of+Sorcery",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/sellia-town-of-sorcery-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Complete Redmane Castle",
+        "wiki": "Redmane+Castle",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/redmane-castle-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Defeat Starscourge Radahn",
+        "wiki": "Starscourge+Radahn",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/starscourge_radahn_bosses_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Complete War-Dead Catacombs",
+        "wiki": "War-Dead+Catacombs",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/war-dead-catacombs-location-elden-ring-wiki-guide.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Nokron, Eternal City & Siofra Aqueduct",
+    "level": "Level: 70+ Upgrades: +15 ~ +20",
+    "tasks": [
+      {
+        "name": "Access Nokron from Mistwood",
+        "wiki": "Nokron,+Eternal+City",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/nokron.jpg"
+      },
+      {
+        "name": "loot-ghost-glovewort-picker-bell-1",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Obtain Larval Tears",
+        "wiki": "Mimic+Tear",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/ghost-glovewort-pickers-bell-bearing-1-key-items-description.png"
+      },
+      {
+        "name": "defeat-mimic-tear",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "get-to-nights-sacred-ground",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Loot Black Whetblade, Celestial Dew",
+        "wiki": "Black+Whetblade",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/black_whetblade_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Obtain Fingerslayer Blade",
+        "wiki": "Fingerslayer+Blade",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fingerslayer_blade_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "collect-ancestral-infant-head",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Defeat Regal Ancestor Spirit",
+        "wiki": "Regal+Ancestor+Spirit",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/regal-ancestor-spirit_map-bosses-enemies-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Enter Siofra Aqueduct",
+        "wiki": "Siofra+Aqueduct",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/siofra-aquaduct.jpg"
+      },
+      {
+        "name": "collect-missionary-cookbook-5",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Trade Twinned Set for Gesture",
+        "wiki": "Twinned+Set",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/twinned-set-elden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Defeat Valiant Gargoyle & Valiant Gargoyle (Twinblade)",
+        "wiki": "Twinned+Set",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/twinned-set-elden-ring-wiki-guide.png"
+      }
+    ]
+  },
+  {
+    "name": "Liurnia of the Lakes West 2",
+    "level": "Level: 70+ Upgrades: +15 ~ +20",
+    "tasks": [
+      {
+        "name": "Get Reward from Ranni",
+        "wiki": "Ranni+the+Witch",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fmlgngpvcacmvf4.jpg"
+      },
+      {
+        "name": "Access Carian Study Hall Hidden Area",
+        "wiki": "Carian+Study+Hall",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/8ef42fdc-7aba-4cb4-8906-15ad073dfc1f.png"
+      },
+      {
+        "name": "Obtain the Cursemark of Death",
+        "wiki": "Cursemark+of+Death",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/cursemark_of_death_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Help Iron Fist Alexander.",
+        "wiki": "Iron+Fist+Alexander",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/alexander_npc_elden_ring_wiki_guide_300px.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Deeproot Depths",
+    "level": "Level: 70+ Upgrades: +15 ~ +20",
+    "tasks": [
+      {
+        "name": "Defeat Erdtree Avatar",
+        "wiki": "Erdtree+Avatar",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/erdtree-avatar-boss-elden-ring-compressed-300px.jpg"
+      },
+      {
+        "name": "Loot Upgrade Materials",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Talk to Palm Reader",
+        "wiki": "Palm+Reader",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/palm_reader_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Obtain Area Map",
+        "wiki": "Deeproot+Depths",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/deeproot-depths-location-undeground-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Activate Walking Mausoleum",
+        "wiki": "Walking+Mausoleum",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/walking-mausoleum-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Defeat Crucible Knight Siluria",
+        "wiki": "Crucible+Knight+Siluria",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/crucible_knight_siluria_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Defeat Fia\"s Champions",
+        "wiki": "Fia\"s+Champions",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/crucible_knight_siluria_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Talk to Fia",
+        "wiki": "Fia",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fia-npc-elden-ring-wiki-300px2-min.jpeg"
+      },
+      {
+        "name": "TDefeat Lichdragon Fortissax",
+        "wiki": "Lichdragon+Fortissax",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lichdragon-fortissax-elden-ring-wiki-guide.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Nokstella, Eternal City & Lake of Rot",
+    "level": "Level: 80+ Upgrades: +15 ~ +20 (Lake of Rot)",
+    "tasks": [
+      {
+        "name": "Enter Ainsel River Main",
+        "wiki": "Ainsel+River+Main",
+        "img": ""
+      },
+      {
+        "name": "Collect Miniature Ranni",
+        "wiki": "Miniature+Ranni",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/miniature-ramni-key-items-description.png"
+      },
+      {
+        "name": "Enter Nokstella, Eternal City",
+        "wiki": "Nokstella,+Eternal+City",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/nokstella-eternal-city-locations-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Collect Key Items & Spirit Ashes",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Talk to Miniature Ranni",
+        "wiki": "Miniature+Ranni",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/miniature-ramni-key-items-description.png"
+      },
+      {
+        "name": "Enter Lake of Rot",
+        "wiki": "Lake+of+Rot",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/lake-of-rot-a-locations-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Obtain Map Fragment",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Use the Discarded Palace Key",
+        "wiki": "Discarded+Palace+Key",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/discarded-palace-key-elden-ring-wiki-guide.png"
+      },
+      {
+        "name": "Defeat Dragonkin Soldier",
+        "wiki": "Dragonkin+Soldier",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/dragonkin-soldier-boss-enemies-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Enter Grand Cloister",
+        "wiki": "Grand+Cloister",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/grand_cloister_locations_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Defeat Astel, Naturalborn of the Void",
+        "wiki": "Astel+Naturalborn+of+the+Void",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/astel.jpg"
+      }
+    ]
+  },
+  {
+    "name": "Altus Plateau",
+    "level": "Level: 60+ Upgrades: +10 ~ +14",
+    "tasks": [
+      {
+        "name": "Get access to the Altus Plateau",
+        "wiki": "Altus+Plateau",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/altus-plateau-hub-location-preview-elden-ring-wiki-guide-300px.jpghttps://eldenring.wiki.fextralife.com/file/Elden-Ring/malefactors_evergaol_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Complete Western Altus Objectives",
+        "wiki": "Altus+Plateau",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/altus-plateau-hub-location-preview-elden-ring-wiki-guide-300px.jpghttps://eldenring.wiki.fextralife.com/file/Elden-Ring/malefactors_evergaol_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Talk to Millicent",
+        "wiki": "Millicent",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/millicent-npc-elden-ring-wiki-300px-min-min-min.jpeg"
+      },
+      {
+        "name": "Complete Old Altus Tunnel",
+        "wiki": "Old+Altus+Tunnel",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/old_altus_tunnel_locations_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Complete Shaded Castle",
+        "wiki": "The+Shaded+Castle",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/the-shaded-castle-location-elden-ring-wiki-guide.jpg"
+      },
+      {
+        "name": "Talk to Millicent",
+        "wiki": "Millicent",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/millicent-npc-elden-ring-wiki-300px-min-min-min.jpeg"
+      },
+      {
+        "name": "Complete Golden Lineage EvergaolBoc the Seamster",
+        "wiki": "Golden+Lineage+Evergaol",
+        "img": ""
+      },
+      {
+        "name": "Obtain Zone Map & Talk to Boc and Corhyn",
+        "wiki": "Brother+Corhyn",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/brother_corhyn_npcs_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Complete Second Church of Marika",
+        "wiki": "Second+Church+of+Marika",
+        "img": ""
+      },
+      {
+        "name": "Get Minord Erdtree Flask Upgrades & complete valley objectives",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Complete Dominula & talk to Millicent",
+        "wiki": "Millicent",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/millicent-npc-elden-ring-wiki-300px-min-min-min.jpeg"
+      },
+      {
+        "name": "Explore Eastern Altus Heights",
+        "wiki": "Altus+Plateau",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/altus-plateau-hub-location-preview-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Meet Goldmask and report to Corhyn",
+        "wiki": "Goldmask",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/goldmask_npcs_elden_ring_wiki_guide300px.jpg"
+      },
+      {
+        "name": "unlock-mt-gelmir-site-of-grace",
+        "wiki": "",
+        "img": ""
+      }
+    ]
+  },
+  {
+    "name": "Mt Gelmir",
+    "level": "Level: 80+ Upgrades: +15 ~ +20",
+    "tasks": [
+      {
+        "name": "Defeat Tibia Mariner",
+        "wiki": "Tibia+Mariner",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/tibia-mariner_ground_boss_enemies_elden_ring_wiki_300px.jpg"
+      },
+      {
+        "name": "Complete Wyndham Ruins & Catacombs",
+        "wiki": "Wyndham+Ruins",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/wyndham_ruins_2_locations_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Collect Golden Seed",
+        "wiki": "Golden+Seed",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_seed_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Complete Fort Laeidd",
+        "wiki": "Fort+Laiedd",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/fort_leidd_icon.png"
+      },
+      {
+        "name": "Defeat Magma Wyrm",
+        "wiki": "Magma+Wyrm",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/magma_wyrm_bosses_elden_ring_wiki_guide.jpg"
+      },
+      {
+        "name": "Talk to Iron Fist Alexander",
+        "wiki": "Iron+Fist+Alexander",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/alexander_npc_elden_ring_wiki_guide_300px.jpg"
+      },
+      {
+        "name": "Obtain Memory Stone & Comet Azur",
+        "wiki": "Comet+Azur",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/comet_azur_sorcery_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "complete-gelmir-hero-grave",
+        "wiki": "",
+        "img": ""
+      },
+      {
+        "name": "Trigger Patches event",
+        "wiki": "Patches",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/patches_bosses_elden_ring_wiki_guide_300x.jpg"
+      },
+      {
+        "name": "Defeat Full-Grown Fallingstar Beast",
+        "wiki": "Full-Grown+Fallingstar+Beast",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/full-grown-fallingstar-beast-bosses-elden-ring-wiki-guide-300px.jpg"
+      },
+      {
+        "name": "Loot Golden Seed & Map Fragment",
+        "wiki": "",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/golden_seed_elden_ring_wiki_guide_200px.png"
+      },
+      {
+        "name": "Complete Volcano Manor",
+        "wiki": "Volcano+Manor",
+        "img": "https://eldenring.wiki.fextralife.com/file/Elden-Ring/volcano-manor-walkthrough-1-elden-ring-wiki-guide.jpg"
+      }
+    ]
+  }
+]
