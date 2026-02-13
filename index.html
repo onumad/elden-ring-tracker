@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Progress</title>
+    <title>Elden Ring Progression Guide and Tracker ✅</title>
     <style>
         * {
             margin: 0;
@@ -11,87 +11,45 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-dark: #1a1a1a;
-            --bg-card: #2d2d2d;
-            --bg-card-hover: #3a3a3a;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0b0;
-            --accent-gold: #d4af37;
-            --accent-blue: #4a90e2;
-            --border: #404040;
-            --success: #4caf50;
-            --incomplete: #555;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: var(--text-primary);
+            background: #f3f4f6;
+            color: #1f2937;
             line-height: 1.6;
-            min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         header {
-            text-align: center;
-            padding: 30px 0;
-            border-bottom: 2px solid var(--accent-gold);
-            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: var(--accent-gold);
+            font-size: 2rem;
+            color: #1f2937;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .subtitle {
-            color: var(--text-secondary);
-            margin-top: 10px;
-            font-size: 0.9rem;
+            color: #6b7280;
+            font-size: 0.875rem;
         }
 
         .subtitle a {
-            color: var(--accent-blue);
+            color: #2563eb;
             text-decoration: none;
         }
 
         .subtitle a:hover {
             text-decoration: underline;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 5px;
         }
 
         .region {
@@ -100,7 +58,6 @@
             border-radius: 8px;
             margin-bottom: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
         .region-header {
@@ -109,8 +66,6 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            background: white;
-            color: #1f2937;
         }
 
         .region-header:hover {
@@ -180,7 +135,6 @@
         .region-content {
             padding: 16px 20px;
             display: none;
-            background: white;
         }
 
         .region.expanded .region-content {
@@ -214,14 +168,13 @@
 
         td {
             padding: 12px;
-            color: #1f2937;
         }
 
         input[type="checkbox"] {
             width: 18px;
             height: 18px;
             cursor: pointer;
-            accent-color: var(--accent-gold);
+            accent-color: #2563eb;
         }
 
         .task-text {
@@ -233,53 +186,59 @@
             color: #9ca3af;
         }
 
-        .wiki-link, .image-link {
-            color: var(--accent-blue);
+        .wiki-link {
+            color: #2563eb;
             text-decoration: none;
             font-size: 0.875rem;
         }
 
-        .wiki-link:hover, .image-link:hover {
+        .wiki-link:hover {
             text-decoration: underline;
         }
 
         .controls {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         button {
-            background: var(--accent-gold);
-            color: #1a1a1a;
+            background: #2563eb;
+            color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 6px;
             cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin: 0 5px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin: 5px;
         }
 
         button:hover {
-            background: #c4a137;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+            background: #1d4ed8;
+        }
+
+        #importFile {
+            display: none;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
-            }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
+                font-size: 1.5rem;
             }
 
             .progress-container {
                 width: 100%;
                 margin-left: 0;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
             }
         }
     </style>
@@ -287,30 +246,12 @@
 <body>
     <div class="container">
         <header>
-            <h1>🗡️ Elden Ring Progression Guide and Tracker ✅</h1>
+            <h1>Elden Ring Progression Guide and Tracker ✅</h1>
             <div class="subtitle">
-                Based on <a href="https://eldenring.wiki.fextralife.com/Game+Progress+Route" target="_blank">Elden Ring Wiki Game Progress Route</a>
+                Based on <a href="https://eldenring.wiki.fextralife.com/Game+Progress+Route" target="_blank">Elden Ring Wiki Game Progress Route</a> - 
+                <a href="https://github.com/JacobMillner/elden-ring-progression" target="_blank">Original by Jacob Millner</a>
             </div>
         </header>
-
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-value" id="overall-percent">0%</div>
-                <div class="stat-label">Overall Progress</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="completed-count">0</div>
-                <div class="stat-label">Tasks Completed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="total-count">0</div>
-                <div class="stat-label">Total Tasks</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="regions-count">0</div>
-                <div class="stat-label">Regions</div>
-            </div>
-        </div>
 
         <div id="regions"></div>
 
@@ -320,283 +261,24 @@
             <button onclick="resetProgress()">Reset Progress</button>
             <button onclick="exportProgress()">Export Progress</button>
             <button onclick="document.getElementById('importFile').click()">Import Progress</button>
-            <input type="file" id="importFile" style="display:none" onchange="importProgress(event)" accept=".json">
+            <input type="file" id="importFile" onchange="importProgress(event)" accept=".json">
         </div>
     </div>
 
     <script>
-        const regionsData = [
-            {
-                name: "West Limegrave",
-                level: "Level: 1~10 Upgrades: 0 ~ +1",
-                tasks: [
-                    { name: "The First Step Site of Grace", wiki: "The+First+Step", img: "" },
-                    { name: "Church of Elleh - Talk to Merchant Kale", wiki: "Merchant+Kale", img: "" },
-                    { name: "Gate Front Ruins - Meet Melina, Get Torrent", wiki: "Melina", img: "" },
-                    { name: "Gatefront Ruins Cellar - Whetstone Knife", wiki: "Whetstone+Knife", img: "" },
-                    { name: "Stormhill Shack - Talk to Roderika", wiki: "Roderika", img: "" },
-                    { name: "Waypoint Ruins - Defeat Mad Pumpkin Head, talk to Sellen", wiki: "Sorcerer+Sellen", img: "" },
-                    { name: "Mistwood Ruins - Talk to Blaidd (use Finger Snap)", wiki: "Blaidd", img: "" },
-                    { name: "West Limgrave Map Fragment", wiki: "Map+(West+Limgrave)", img: "" },
-                ]
-            },
-            {
-                name: "East Limegrave",
-                level: "Level: 5~10 Upgrades: +1 ~ +2",
-                tasks: [
-                    { name: "Third Church of Marika - Flask of Wondrous Physick", wiki: "Flask+of+Wondrous+Physick", img: "" },
-                    { name: "Summonwater Village - Tibia Mariner boss", wiki: "Tibia+Mariner", img: "" },
-                    { name: "Saintsbridge - cross to Weeping Peninsula", wiki: "Weeping+Peninsula", img: "" },
-                    { name: "Siofra River Well - Access underground", wiki: "Siofra+River", img: "" },
-                    { name: "East Limgrave Map Fragment", wiki: "Map+(East+Limgrave)", img: "" },
-                    { name: "Beast Sanctum - Talk to Gurranq", wiki: "Gurranq", img: "" },
-                ]
-            },
-            {
-                name: "Southern Limegrave & Weeping Peninsula",
-                level: "Level: 20 Upgrades: 3+",
-                tasks: [
-                    { name: "Castle Morne - Defeat Leonine Misbegotten", wiki: "Leonine+Misbegotten", img: "" },
-                    { name: "Complete Irina's Quest", wiki: "Irina", img: "" },
-                    { name: "Get Grafted Blade Greatsword", wiki: "Grafted+Blade+Greatsword", img: "" },
-                    { name: "Weeping Peninsula Map Fragment", wiki: "Map+(Weeping+Peninsula)", img: "" },
-                    { name: "Fourth Church of Marika - Sacred Tear", wiki: "Sacred+Tear", img: "" },
-                ]
-            },
-            {
-                name: "Roundtable Hold",
-                level: "",
-                tasks: [
-                    { name: "Talk to all NPCs in Roundtable Hold", wiki: "Roundtable+Hold", img: "" },
-                    { name: "Give Roderika the Chrysalids' Memento", wiki: "Roderika", img: "" },
-                    { name: "Talk to Nepheli Loux", wiki: "Nepheli+Loux", img: "" },
-                    { name: "Talk to Brother Corhyn", wiki: "Brother+Corhyn", img: "" },
-                    { name: "Talk to Fia", wiki: "Fia", img: "" },
-                    { name: "Talk to D, Hunter of the Dead", wiki: "D,+Hunter+of+the+Dead", img: "" },
-                ]
-            },
-            {
-                name: "Stormveil Castle",
-                level: "Level: 30~40 Upgrades: +3 ~ +4",
-                tasks: [
-                    { name: "Defeat Margit, the Fell Omen", wiki: "Margit+the+Fell+Omen", img: "" },
-                    { name: "Talk to Nepheli Loux before Godrick", wiki: "Nepheli+Loux", img: "" },
-                    { name: "Defeat Godrick the Grafted", wiki: "Godrick+the+Grafted", img: "" },
-                    { name: "Activate Godrick's Great Rune at Divine Tower", wiki: "Divine+Tower+of+Limgrave", img: "" },
-                    { name: "Find Rogier in the chapel", wiki: "Rogier", img: "" },
-                    { name: "Liftside Chamber - Stonesword Key door", wiki: "Stormveil+Castle", img: "" },
-                ]
-            },
-            {
-                name: "Liurnia of the Lakes South",
-                level: "Level: 40~50 Upgrades: +3 ~ +4",
-                tasks: [
-                    { name: "Lake-Facing Cliffs - Meet Hyetta (if doing quest)", wiki: "Hyetta", img: "" },
-                    { name: "Church of Irith - Talk to Sorcerer Thops", wiki: "Sorcerer+Thops", img: "" },
-                    { name: "Liurnia Lake Shore - Buy lantern from merchant", wiki: "Nomadic+Merchant+(Liurnia)", img: "" },
-                    { name: "Academy Gate Town Site of Grace", wiki: "Academy+Gate+Town", img: "" },
-                    { name: "South Liurnia Map Fragment", wiki: "Map+(Liurnia,+South)", img: "" },
-                ]
-            },
-            {
-                name: "Raya Lucaria Academy",
-                level: "Level: 50~60 Upgrades: +4 ~ +6",
-                tasks: [
-                    { name: "Kill Glintstone Dragon Smarag - Get Academy Glintstone Key", wiki: "Academy+Glintstone+Key", img: "" },
-                    { name: "Defeat Red Wolf of Radagon", wiki: "Red+Wolf+of+Radagon", img: "" },
-                    { name: "Get second Glintstone Key (rooftops)", wiki: "Academy+Glintstone+Key", img: "" },
-                    { name: "Debate Parlor - Golden Seed in courtyard", wiki: "Golden+Seed", img: "" },
-                    { name: "Defeat Rennala, Queen of the Full Moon", wiki: "Rennala", img: "" },
-                    { name: "Get Avionette Ashes (jump from rotating platform)", wiki: "Avionette+Ashes", img: "" },
-                    { name: "Get Marionette Ashes (graveyard)", wiki: "Marionette+Ashes", img: "" },
-                ]
-            },
-            {
-                name: "Liurnia of the Lakes East",
-                level: "Level: 50~60 Upgrades: +4 ~ +6",
-                tasks: [
-                    { name: "Carian Study Hall - Preceptor Miriam boss", wiki: "Carian+Study+Hall", img: "" },
-                    { name: "Highway Lookout Tower - Golem boss", wiki: "Highway+Lookout+Tower", img: "" },
-                    { name: "East Liurnia Map Fragment", wiki: "Map+(Liurnia,+East)", img: "" },
-                    { name: "Artist's Shack - Talk to Nepheli", wiki: "Nepheli+Loux", img: "" },
-                    { name: "Laskyar Ruins - Underwater treasures", wiki: "Laskyar+Ruins", img: "" },
-                ]
-            },
-            {
-                name: "Ainsel River (Underground)",
-                level: "Level: 50~60 Upgrades: +4 ~ +6",
-                tasks: [
-                    { name: "Ainsel River Main - Dragonkin Soldier boss", wiki: "Dragonkin+Soldier+(Ainsel)", img: "" },
-                    { name: "Lake of Rot (later in Ranni's quest)", wiki: "Lake+of+Rot", img: "" },
-                ]
-            },
-            {
-                name: "Liurnia of the Lakes West",
-                level: "Level: 60~70 Upgrades: +8 ~ +12",
-                tasks: [
-                    { name: "Defeat Royal Knight Loretta at Caria Manor", wiki: "Royal+Knight+Loretta", img: "" },
-                    { name: "Three Sisters - Talk to Ranni, start her questline", wiki: "Ranni+the+Witch", img: "" },
-                    { name: "Talk to Blaidd in Siofra River", wiki: "Blaidd", img: "" },
-                    { name: "Talk to Iji the Blacksmith", wiki: "War+Counselor+Iji", img: "" },
-                    { name: "Talk to Seluvis", wiki: "Preceptor+Seluvis", img: "" },
-                    { name: "West Liurnia Map Fragment", wiki: "Map+(Liurnia,+West)", img: "" },
-                    { name: "Village of the Albinaurics - Find Albus (pot)", wiki: "Albus", img: "" },
-                    { name: "Village of the Albinaurics - Get Haligtree Medallion (Right)", wiki: "Haligtree+Secret+Medallion", img: "" },
-                    { name: "Four Belfries - Portal to Chapel of Anticipation", wiki: "Four+Belfries", img: "" },
-                ]
-            },
-            {
-                name: "Siofra River (underground)",
-                level: "Level: 60+ Upgrades: +8 ~ +12",
-                tasks: [
-                    { name: "Ancestral Spirit boss fight", wiki: "Ancestor+Spirit", img: "" },
-                    { name: "Talk to Blaidd here (Ranni's quest)", wiki: "Blaidd", img: "" },
-                    { name: "Explore for Ghost Glovewort", wiki: "Ghost+Glovewort", img: "" },
-                ]
-            },
-            {
-                name: "Caelid (South)",
-                level: "Level: 60+ Upgrades: +10 ~ +12",
-                tasks: [
-                    { name: "Caelid Map Fragment", wiki: "Map+(Caelid)", img: "" },
-                    { name: "Sellia, Town of Sorcery - Light three flames", wiki: "Sellia", img: "" },
-                    { name: "Redmane Castle - Defeat Starscourge Radahn", wiki: "Starscourge+Radahn", img: "" },
-                    { name: "After Radahn, access Nokron via meteor crater", wiki: "Nokron,+Eternal+City", img: "" },
-                    { name: "Dragonbarrow Map Fragment", wiki: "Map+(Dragonbarrow)", img: "" },
-                    { name: "Commander O'Neil in Aeonia Swamp", wiki: "Commander+O%27Neil", img: "" },
-                    { name: "Get Meteorite Staff (swamp)", wiki: "Meteorite+Staff", img: "" },
-                    { name: "Gael Tunnel - Moonveil Katana", wiki: "Moonveil", img: "" },
-                ]
-            },
-            {
-                name: "Nokron, Eternal City & Siofra Aqueduct",
-                level: "Level: 70+ Upgrades: +15 ~ +20",
-                tasks: [
-                    { name: "Defeat Mimic Tear boss", wiki: "Mimic+Tear", img: "" },
-                    { name: "Get Fingerslayer Blade (Ranni's quest)", wiki: "Fingerslayer+Blade", img: "" },
-                    { name: "Get Mimic Tear Ashes", wiki: "Mimic+Tear+Ashes", img: "" },
-                    { name: "Explore Night's Sacred Ground", wiki: "Night%27s+Sacred+Ground", img: "" },
-                ]
-            },
-            {
-                name: "Liurnia of the Lakes West 2",
-                level: "Level: 70+ Upgrades: +15 ~ +20",
-                tasks: [
-                    { name: "Moonlight Altar (after Astel) - Glintstone Dragon Adula", wiki: "Glintstone+Dragon+Adula", img: "" },
-                    { name: "Cathedral of Manus Celes - Give Fingerslayer to Ranni", wiki: "Cathedral+of+Manus+Celes", img: "" },
-                ]
-            },
-            {
-                name: "Deeproot Depths",
-                level: "Level: 70+ Upgrades: +15 ~ +20",
-                tasks: [
-                    { name: "Access via Siofra Aqueduct coffin", wiki: "Deeproot+Depths", img: "" },
-                    { name: "Defeat Fia's Champions", wiki: "Fia%27s+Champions", img: "" },
-                    { name: "Give Twinned Armor to D's brother (Fia quest)", wiki: "D%27s+Twin+Brother", img: "" },
-                    { name: "Defeat Lichdragon Fortissax", wiki: "Lichdragon+Fortissax", img: "" },
-                ]
-            },
-            {
-                name: "Nokstella, Eternal City & Lake of Rot",
-                level: "Level: 80+ Upgrades: +15 ~ +20 (Lake of Rot)",
-                tasks: [
-                    { name: "Nokstella - Get Fingerslayer Blade", wiki: "Fingerslayer+Blade", img: "" },
-                    { name: "Lake of Rot - Light flames to drain poison", wiki: "Lake+of+Rot", img: "" },
-                    { name: "Defeat Astel, Naturalborn of the Void", wiki: "Astel,+Naturalborn+of+the+Void", img: "" },
-                    { name: "Unlock Moonlight Altar", wiki: "Moonlight+Altar", img: "" },
-                ]
-            },
-            {
-                name: "Altus Plateau",
-                level: "Level: 60+ Upgrades: +10 ~ +14",
-                tasks: [
-                    { name: "Grand Lift of Dectus - Use both medallion halves", wiki: "Grand+Lift+of+Dectus", img: "" },
-                    { name: "Altus Plateau Map Fragment", wiki: "Map+(Altus+Plateau)", img: "" },
-                    { name: "Minor Erdtree - Erdtree Avatar boss", wiki: "Erdtree+Avatar", img: "" },
-                    { name: "Shaded Castle - Defeat Elemer of the Briar", wiki: "Elemer+of+the+Briar", img: "" },
-                    { name: "Second Church of Marika - Sacred Tear", wiki: "Sacred+Tear", img: "" },
-                ]
-            },
-            {
-                name: "Mt Gelmir",
-                level: "Level: 80+ Upgrades: +15 ~ +20",
-                tasks: [
-                    { name: "Mt. Gelmir Map Fragment", wiki: "Map+(Mt.+Gelmir)", img: "" },
-                    { name: "Volcano Manor - Join Tanith's questline", wiki: "Tanith", img: "" },
-                    { name: "Complete Volcano Manor assassination contracts", wiki: "Volcano+Manor", img: "" },
-                    { name: "Defeat Godskin Noble", wiki: "Godskin+Noble", img: "" },
-                    { name: "Defeat Rykard, Lord of Blasphemy", wiki: "Rykard,+Lord+of+Blasphemy", img: "" },
-                    { name: "Get Serpent-Hunter spear", wiki: "Serpent-Hunter", img: "" },
-                ]
-            },
-            {
-                name: "Leyndell, Royal Capital",
-                level: "Level: 80+ Upgrades: +18 ~ +22",
-                tasks: [
-                    { name: "Defeat Draconic Tree Sentinel at gate", wiki: "Draconic+Tree+Sentinel", img: "" },
-                    { name: "Leyndell Map Fragment", wiki: "Map+(Leyndell)", img: "" },
-                    { name: "Defeat Godfrey, First Elden Lord (Golden Shade)", wiki: "Godfrey", img: "" },
-                    { name: "Defeat Morgott, the Omen King", wiki: "Morgott", img: "" },
-                    { name: "Activate Morgott's Great Rune", wiki: "Divine+Tower+of+East+Altus", img: "" },
-                    { name: "Subterranean Shunning-Grounds - Mohg, the Omen", wiki: "Mohg,+the+Omen", img: "" },
-                    { name: "Find Frenzied Flame (if doing that ending)", wiki: "Frenzied+Flame", img: "" },
-                ]
-            },
-            {
-                name: "Mountaintops of the Giants",
-                level: "Level: 100+ Upgrades: +22 ~ +24",
-                tasks: [
-                    { name: "Mountaintops East Map Fragment", wiki: "Map+(Mountaintops+East)", img: "" },
-                    { name: "Mountaintops West Map Fragment", wiki: "Map+(Mountaintops+West)", img: "" },
-                    { name: "Ancient Snow Valley Ruins - Zamor Ruins", wiki: "Zamor+Ruins", img: "" },
-                    { name: "Defeat Fire Giant", wiki: "Fire+Giant", img: "" },
-                    { name: "Burn the Erdtree with Melina", wiki: "Forge+of+the+Giants", img: "" },
-                ]
-            },
-            {
-                name: "Crumbling Farum Azula",
-                level: "Level: 110+ Upgrades: +24 ~ +25",
-                tasks: [
-                    { name: "Dragon Temple - Godskin Duo boss", wiki: "Godskin+Duo", img: "" },
-                    { name: "Defeat Maliketh, the Black Blade", wiki: "Maliketh", img: "" },
-                    { name: "Optional: Dragonlord Placidusax (hidden boss)", wiki: "Dragonlord+Placidusax", img: "" },
-                ]
-            },
-            {
-                name: "Leyndell, Ashen Capital",
-                level: "Level: 120+ Upgrades: +25",
-                tasks: [
-                    { name: "Defeat Sir Gideon Ofnir", wiki: "Sir+Gideon+Ofnir", img: "" },
-                    { name: "Defeat Hoarah Loux / Godfrey", wiki: "Hoarah+Loux", img: "" },
-                ]
-            },
-            {
-                name: "Endgame",
-                level: "Level: 120+ Upgrades: +25",
-                tasks: [
-                    { name: "Defeat Radagon of the Golden Order", wiki: "Radagon+of+the+Golden+Order", img: "" },
-                    { name: "Defeat Elden Beast", wiki: "Elden+Beast", img: "" },
-                ]
-            },
-            {
-                name: "Mohgwyn Palace (Optional)",
-                level: "Level: 100+ Upgrades: +20 ~ +25",
-                tasks: [
-                    { name: "Access via Consecrated Snowfield portal or White Mask Varre quest", wiki: "Mohgwyn+Palace", img: "" },
-                    { name: "Defeat Mohg, Lord of Blood", wiki: "Mohg,+Lord+of+Blood", img: "" },
-                ]
-            },
-            {
-                name: "Miquella's Haligtree (Optional)",
-                level: "Level: 120+ Upgrades: +25",
-                tasks: [
-                    { name: "Consecrated Snowfield - Use Secret Medallion at Grand Lift of Rold", wiki: "Consecrated+Snowfield", img: "" },
-                    { name: "Find Ordina, Liturgical Town - Solve puzzle", wiki: "Ordina,+Liturgical+Town", img: "" },
-                    { name: "Miquella's Haligtree - Loretta, Knight of the Haligtree", wiki: "Loretta,+Knight+of+the+Haligtree", img: "" },
-                    { name: "Defeat Malenia, Blade of Miquella", wiki: "Malenia,+Blade+of+Miquella", img: "" },
-                ]
-            }
-        ];
+        let regionsData = [];
+
+        // Load data from JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                regionsData = data;
+                renderRegions();
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                alert('Error loading tracker data. Please refresh the page.');
+            });
 
         function saveProgress() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -626,22 +308,6 @@
         }
 
         function updateStats() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            const total = checkboxes.length;
-            let completed = 0;
-
-            checkboxes.forEach(cb => {
-                if (cb.checked) completed++;
-            });
-
-            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-
-            document.getElementById('overall-percent').textContent = percent + '%';
-            document.getElementById('completed-count').textContent = completed;
-            document.getElementById('total-count').textContent = total;
-            document.getElementById('regions-count').textContent = regionsData.length;
-
-            // Update region progress bars
             regionsData.forEach((region, index) => {
                 const regionCheckboxes = document.querySelectorAll(`#region-${index} input[type="checkbox"]`);
                 const regionTotal = regionCheckboxes.length;
@@ -673,12 +339,15 @@
                 region.tasks.forEach((task, taskIndex) => {
                     const taskId = `task-${regionIndex}-${taskIndex}`;
                     const wikiLink = task.wiki ? `https://eldenring.wiki.fextralife.com/${task.wiki}` : '#';
+                    const hasWiki = task.wiki && task.wiki.trim() !== '';
+                    const hasImg = task.img && task.img.trim() !== '';
+                    
                     tasksHTML += `
                         <tr id="row-${taskId}">
                             <td><input type="checkbox" id="${taskId}" onchange="handleCheckbox('${taskId}')"></td>
                             <td class="task-text" onclick="document.getElementById('${taskId}').click()">${task.name}</td>
-                            <td>${task.wiki ? `<a href="${wikiLink}" target="_blank" class="wiki-link">Wiki</a>` : ''}</td>
-                            <td>${task.img ? `<a href="${task.img}" target="_blank" class="image-link">Image</a>` : ''}</td>
+                            <td>${hasWiki ? `<a href="${wikiLink}" target="_blank" class="wiki-link">Wiki</a>` : ''}</td>
+                            <td>${hasImg ? `<a href="${task.img}" target="_blank" class="wiki-link">Image</a>` : ''}</td>
                         </tr>`;
                 });
                 
@@ -778,11 +447,6 @@
             };
             reader.readAsText(file);
         }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderRegions();
-        });
     </script>
 </body>
 </html>
