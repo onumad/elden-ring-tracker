@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elden Ring Progression Guide and Tracker ✅</title>
+    <title>Elden Ring Progress Tracker</title>
     <style>
         * {
             margin: 0;
@@ -11,129 +11,250 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --success: #10b981;
+            --border: #475569;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f3f4f6;
-            color: #1f2937;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1e293b 100%);
+            color: var(--text-primary);
             line-height: 1.6;
+            min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         header {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px var(--shadow);
+            border: 1px solid var(--border);
         }
 
         h1 {
-            font-size: 2rem;
-            color: #1f2937;
+            font-size: 2.5rem;
+            color: var(--accent);
             margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .subtitle {
-            color: #6b7280;
-            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            line-height: 1.8;
         }
 
         .subtitle a {
-            color: #2563eb;
+            color: var(--accent);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
         .subtitle a:hover {
-            text-decoration: underline;
+            color: var(--accent-hover);
         }
 
-        .region {
-            background: white;
-            border: 1px solid #e5e7eb;
+        /* Stats Dashboard */
+        .stats-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        button {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* Region Card */
+        .region {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 15px;
             overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        .region:hover {
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .region.hidden {
+            display: none;
         }
 
         .region-header {
-            padding: 16px 20px;
+            padding: 20px 24px;
             cursor: pointer;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
+            gap: 15px;
+            transition: background 0.2s;
         }
 
         .region-header:hover {
-            background: #f9fafb;
-        }
-
-        .region-left {
-            flex: 1;
-        }
-
-        .region-title-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
-
-        .region-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1f2937;
+            background: var(--bg-card);
         }
 
         .expand-icon {
-            transition: transform 0.3s ease;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
         }
 
         .region.expanded .expand-icon {
             transform: rotate(180deg);
         }
 
-        .region-meta {
-            font-size: 0.75rem;
-            color: #6b7280;
-            margin-bottom: 8px;
+        .region-info {
+            flex: 1;
         }
 
-        .progress-container {
-            width: 83.333333%;
-            margin-left: 16px;
+        .region-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .region-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .region-progress {
+            flex-shrink: 0;
+            min-width: 200px;
         }
 
         .progress-bar {
             width: 100%;
-            height: 24px;
-            background: #e5e7eb;
-            border-radius: 9999px;
+            height: 8px;
+            background: var(--bg-card);
+            border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
         .progress-fill {
             height: 100%;
-            background: #2563eb;
+            background: linear-gradient(90deg, var(--success) 0%, var(--accent) 100%);
             transition: width 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #dbeafe;
-            font-size: 0.75rem;
-            font-weight: 500;
-            border-radius: 9999px;
+            border-radius: 4px;
         }
 
+        .progress-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: right;
+        }
+
+        /* Region Content */
         .region-content {
-            padding: 16px 20px;
+            padding: 0 24px 24px 24px;
             display: none;
         }
 
@@ -141,126 +262,233 @@
             display: block;
         }
 
+        /* Task Table */
         table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
         }
 
         thead {
-            background: #f9fafb;
+            background: var(--bg-card);
         }
 
         th {
-            padding: 12px;
+            padding: 14px 16px;
             text-align: left;
             font-weight: 600;
-            color: #1f2937;
-            border-bottom: 2px solid #e5e7eb;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 8px;
         }
 
         tbody tr {
-            border-bottom: 1px solid #f3f4f6;
+            transition: background 0.2s;
         }
 
         tbody tr:hover {
-            background: #f9fafb;
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        tbody tr:last-child td:first-child {
+            border-bottom-left-radius: 8px;
+        }
+
+        tbody tr:last-child td:last-child {
+            border-bottom-right-radius: 8px;
         }
 
         td {
-            padding: 12px;
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
         }
 
         input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
-            accent-color: #2563eb;
+            accent-color: var(--accent);
         }
 
         .task-text {
             cursor: pointer;
+            color: var(--text-primary);
+            transition: color 0.2s;
+        }
+
+        .task-text:hover {
+            color: var(--accent);
         }
 
         tr.completed .task-text {
             text-decoration: line-through;
-            color: #9ca3af;
+            color: var(--text-secondary);
+            opacity: 0.6;
         }
 
         .wiki-link {
-            color: #2563eb;
+            color: var(--accent);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
         .wiki-link:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
 
-        .controls {
+        /* Bottom Controls */
+        .bottom-controls {
+            margin-top: 30px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border);
             text-align: center;
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px var(--shadow);
         }
 
-        button {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s ease;
+        .bottom-controls button {
             margin: 5px;
-        }
-
-        button:hover {
-            background: #1d4ed8;
         }
 
         #importFile {
             display: none;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
-            .progress-container {
+            .stats-dashboard {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
                 width: 100%;
-                margin-left: 0;
             }
 
             button {
-                display: block;
+                width: 100%;
+            }
+
+            .region-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .region-progress {
+                width: 100%;
+            }
+
+            .progress-text {
+                text-align: left;
+            }
+
+            th, td {
+                padding: 10px 12px;
+                font-size: 0.85rem;
+            }
+
+            .bottom-controls button {
                 width: 100%;
                 margin: 5px 0;
             }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Elden Ring Progression Guide and Tracker ✅</h1>
+            <h1>⚔️ Elden Ring Progress Tracker</h1>
             <div class="subtitle">
-                Based on <a href="https://eldenring.wiki.fextralife.com/Game+Progress+Route" target="_blank">Elden Ring Wiki Game Progress Route</a> - 
-                <a href="https://github.com/JacobMillner/elden-ring-progression" target="_blank">Original by Jacob Millner</a>
+                Track your journey through the Lands Between<br>
+                Based on <a href="https://eldenring.wiki.fextralife.com/Game+Progress+Route" target="_blank">Fextralife Game Progress Route</a>
             </div>
         </header>
 
-        <div id="regions"></div>
+        <div class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-value" id="overall-percent">0%</div>
+                <div class="stat-label">Overall Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completed-count">0</div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-count">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="regions-count">0</div>
+                <div class="stat-label">Regions</div>
+            </div>
+        </div>
 
         <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search tasks or regions..." oninput="filterRegions()">
+            </div>
             <button onclick="expandAll()">Expand All</button>
             <button onclick="collapseAll()">Collapse All</button>
             <button onclick="resetProgress()">Reset Progress</button>
-            <button onclick="exportProgress()">Export Progress</button>
-            <button onclick="document.getElementById('importFile').click()">Import Progress</button>
+        </div>
+
+        <div id="regions">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading tracker data...</p>
+            </div>
+        </div>
+
+        <div class="bottom-controls">
+            <button onclick="exportProgress()">📥 Export Progress</button>
+            <button onclick="document.getElementById('importFile').click()">📤 Import Progress</button>
             <input type="file" id="importFile" onchange="importProgress(event)" accept=".json">
         </div>
     </div>
@@ -274,10 +502,11 @@
             .then(data => {
                 regionsData = data;
                 renderRegions();
+                updateGlobalStats();
             })
             .catch(error => {
                 console.error('Error loading data:', error);
-                alert('Error loading tracker data. Please refresh the page.');
+                document.getElementById('regions').innerHTML = '<div class="loading"><p>❌ Error loading tracker data. Please refresh the page.</p></div>';
             });
 
         function saveProgress() {
@@ -287,7 +516,8 @@
                 progress[cb.id] = cb.checked;
             });
             localStorage.setItem('eldenRingProgress', JSON.stringify(progress));
-            updateStats();
+            updateGlobalStats();
+            updateAllRegionProgress();
         }
 
         function loadProgress() {
@@ -304,37 +534,62 @@
                     }
                 });
             }
-            updateStats();
         }
 
-        function updateStats() {
-            regionsData.forEach((region, index) => {
-                const regionCheckboxes = document.querySelectorAll(`#region-${index} input[type="checkbox"]`);
-                const regionTotal = regionCheckboxes.length;
-                let regionCompleted = 0;
+        function updateGlobalStats() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            let completed = 0;
 
-                regionCheckboxes.forEach(cb => {
-                    if (cb.checked) regionCompleted++;
-                });
-
-                const regionPercent = regionTotal > 0 ? Math.round((regionCompleted / regionTotal) * 100) : 0;
-                const progressFill = document.querySelector(`#region-${index} .progress-fill`);
-                if (progressFill) {
-                    progressFill.style.width = regionPercent + '%';
-                    progressFill.textContent = `${regionCompleted}/${regionTotal}`;
-                }
+            checkboxes.forEach(cb => {
+                if (cb.checked) completed++;
             });
+
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('overall-percent').textContent = percent + '%';
+            document.getElementById('completed-count').textContent = completed;
+            document.getElementById('total-count').textContent = total;
+            document.getElementById('regions-count').textContent = regionsData.length;
+        }
+
+        function updateAllRegionProgress() {
+            regionsData.forEach((region, index) => {
+                updateRegionProgress(index);
+            });
+        }
+
+        function updateRegionProgress(regionIndex) {
+            const regionCheckboxes = document.querySelectorAll(`#region-${regionIndex} input[type="checkbox"]`);
+            const regionTotal = regionCheckboxes.length;
+            let regionCompleted = 0;
+
+            regionCheckboxes.forEach(cb => {
+                if (cb.checked) regionCompleted++;
+            });
+
+            const regionPercent = regionTotal > 0 ? (regionCompleted / regionTotal) * 100 : 0;
+            const progressFill = document.querySelector(`#region-${regionIndex} .progress-fill`);
+            const progressText = document.querySelector(`#region-${regionIndex} .progress-text`);
+            
+            if (progressFill) {
+                progressFill.style.width = regionPercent + '%';
+            }
+            if (progressText) {
+                progressText.textContent = `${regionCompleted}/${regionTotal} (${Math.round(regionPercent)}%)`;
+            }
         }
 
         function renderRegions() {
             const container = document.getElementById('regions');
+            container.innerHTML = '';
             
             regionsData.forEach((region, regionIndex) => {
                 const regionDiv = document.createElement('div');
                 regionDiv.className = 'region';
                 regionDiv.id = `region-${regionIndex}`;
 
-                let tasksHTML = '<table><thead><tr><th>Done</th><th>Task</th><th>Wiki</th><th>Image</th></tr></thead><tbody>';
+                let tasksHTML = '<table><thead><tr><th style="width: 50px">Done</th><th>Task</th><th style="width: 80px">Wiki</th><th style="width: 80px">Image</th></tr></thead><tbody>';
                 
                 region.tasks.forEach((task, taskIndex) => {
                     const taskId = `task-${regionIndex}-${taskIndex}`;
@@ -346,8 +601,8 @@
                         <tr id="row-${taskId}">
                             <td><input type="checkbox" id="${taskId}" onchange="handleCheckbox('${taskId}')"></td>
                             <td class="task-text" onclick="document.getElementById('${taskId}').click()">${task.name}</td>
-                            <td>${hasWiki ? `<a href="${wikiLink}" target="_blank" class="wiki-link">Wiki</a>` : ''}</td>
-                            <td>${hasImg ? `<a href="${task.img}" target="_blank" class="wiki-link">Image</a>` : ''}</td>
+                            <td>${hasWiki ? `<a href="${wikiLink}" target="_blank" class="wiki-link">Wiki →</a>` : ''}</td>
+                            <td>${hasImg ? `<a href="${task.img}" target="_blank" class="wiki-link">View</a>` : ''}</td>
                         </tr>`;
                 });
                 
@@ -355,19 +610,18 @@
 
                 regionDiv.innerHTML = `
                     <div class="region-header" onclick="toggleRegion(${regionIndex})">
-                        <div class="region-left">
-                            <div class="region-title-row">
-                                <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                </svg>
-                                <span class="region-title">${region.name}</span>
+                        <svg class="expand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="region-info">
+                            <div class="region-title">${region.name}</div>
+                            ${region.level ? `<div class="region-meta">${region.level}</div>` : ''}
+                        </div>
+                        <div class="region-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
                             </div>
-                            ${region.level ? `<p class="region-meta">${region.level}</p>` : ''}
-                            <div class="progress-container">
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 0%">0/${region.tasks.length}</div>
-                                </div>
-                            </div>
+                            <div class="progress-text">0/${region.tasks.length} (0%)</div>
                         </div>
                     </div>
                     <div class="region-content">
@@ -379,6 +633,7 @@
             });
 
             loadProgress();
+            updateAllRegionProgress();
         }
 
         function handleCheckbox(taskId) {
@@ -405,28 +660,44 @@
             document.querySelectorAll('.region').forEach(r => r.classList.remove('expanded'));
         }
 
+        function filterRegions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const regions = document.querySelectorAll('.region');
+            
+            regions.forEach(region => {
+                const regionText = region.textContent.toLowerCase();
+                if (regionText.includes(searchTerm)) {
+                    region.classList.remove('hidden');
+                } else {
+                    region.classList.add('hidden');
+                }
+            });
+        }
+
         function resetProgress() {
-            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+            if (confirm('⚠️ Are you sure you want to reset ALL progress?\n\nThis cannot be undone.')) {
                 localStorage.removeItem('eldenRingProgress');
                 document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
                     cb.checked = false;
                     cb.closest('tr').classList.remove('completed');
                 });
-                updateStats();
+                updateGlobalStats();
+                updateAllRegionProgress();
             }
         }
 
         function exportProgress() {
             const progress = localStorage.getItem('eldenRingProgress');
             if (!progress) {
-                alert('No progress to export!');
+                alert('❌ No progress to export!');
                 return;
             }
             const blob = new Blob([progress], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'elden-ring-progress.json';
+            const date = new Date().toISOString().split('T')[0];
+            a.download = `elden-ring-progress-${date}.json`;
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -442,7 +713,7 @@
                     localStorage.setItem('eldenRingProgress', JSON.stringify(progress));
                     location.reload();
                 } catch (error) {
-                    alert('Error importing progress: ' + error.message);
+                    alert('❌ Error importing progress: ' + error.message);
                 }
             };
             reader.readAsText(file);
