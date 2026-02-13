@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Ring Progress Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #1a1a1a;
+            --bg-card: #2d2d2d;
+            --bg-card-hover: #3a3a3a;
+            --text-primary: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --accent-gold: #d4af37;
+            --accent-blue: #4a90e2;
+            --border: #404040;
+            --success: #4caf50;
+            --incomplete: #555;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--accent-gold);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .region {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .region:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .region-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-hover) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .region-header:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .region-title {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .region-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--incomplete);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success) 0%, var(--accent-gold) 100%);
+            transition: width 0.3s ease;
+        }
+
+        .region-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .region.expanded .region-content {
+            display: block;
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .region.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .task-group {
+            margin-bottom: 20px;
+        }
+
+        .task-group-title {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .task:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateX(5px);
+        }
+
+        .task.completed {
+            opacity: 0.6;
+        }
+
+        .task input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: var(--accent-gold);
+        }
+
+        .task-label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .task.completed .task-label {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+
+        .task-type {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .boss {
+            background: #c23b22;
+            color: white;
+        }
+
+        .dungeon {
+            background: #7b68ee;
+            color: white;
+        }
+
+        .npc {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .item {
+            background: var(--accent-gold);
+            color: #1a1a1a;
+        }
+
+        button {
+            background: var(--accent-gold);
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #c4a137;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .controls button {
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗡️ Elden Ring Progress Tracker</h1>
+            <p style="color: var(--text-secondary);">Track your journey through the Lands Between</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="overall-percent">0%</div>
+                <div class="stat-label">Overall Progress</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completed-count">0</div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-count">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="bosses-count">0</div>
+                <div class="stat-label">Bosses Defeated</div>
+            </div>
+        </div>
+
+        <div id="regions"></div>
+
+        <div class="controls">
+            <button onclick="expandAll()">Expand All</button>
+            <button onclick="collapseAll()">Collapse All</button>
+            <button onclick="resetProgress()">Reset Progress</button>
+        </div>
+    </div>
+
+    <script>
+        const regions = [
+            {
+                name: "Limgrave",
+                level: "1-30",
+                upgrade: "+0 to +3",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Margit, the Fell Omen", type: "boss" },
+                        { name: "Godrick the Grafted", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Stormveil Castle", type: "dungeon" },
+                        { name: "Murkwater Cave", type: "dungeon" },
+                        { name: "Groveside Cave", type: "dungeon" }
+                    ]},
+                    { group: "NPCs", tasks: [
+                        { name: "Talk to Melina at Gatefront", type: "npc" },
+                        { name: "Find Roderika at Stormhill Shack", type: "npc" },
+                        { name: "Talk to Boc in Limgrave", type: "npc" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Get Torrent (spirit horse)", type: "item" },
+                        { name: "Find Map Fragment - East Limgrave", type: "item" },
+                        { name: "Find Map Fragment - West Limgrave", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Weeping Peninsula",
+                level: "20-40",
+                upgrade: "+2 to +4",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Leonine Misbegotten", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Castle Morne", type: "dungeon" },
+                        { name: "Tombsward Cave", type: "dungeon" }
+                    ]},
+                    { group: "NPCs", tasks: [
+                        { name: "Complete Irina's quest", type: "npc" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Find Map Fragment - Weeping Peninsula", type: "item" },
+                        { name: "Get Grafted Blade Greatsword", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Liurnia of the Lakes",
+                level: "30-60",
+                upgrade: "+3 to +6",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Glintstone Dragon Smarag", type: "boss" },
+                        { name: "Red Wolf of Radagon", type: "boss" },
+                        { name: "Rennala, Queen of the Full Moon", type: "boss" },
+                        { name: "Royal Knight Loretta", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Raya Lucaria Academy", type: "dungeon" },
+                        { name: "Caria Manor", type: "dungeon" },
+                        { name: "Carian Study Hall", type: "dungeon" }
+                    ]},
+                    { group: "NPCs", tasks: [
+                        { name: "Start Ranni's questline", type: "npc" },
+                        { name: "Talk to Sorcerer Thops", type: "npc" },
+                        { name: "Find Nepheli in Village of Albinaurics", type: "npc" },
+                        { name: "Get Haligtree medallion from Albus", type: "npc" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Academy Glintstone Key", type: "item" },
+                        { name: "Sword of Night and Flame", type: "item" },
+                        { name: "Map Fragment - East Liurnia", type: "item" },
+                        { name: "Map Fragment - West Liurnia", type: "item" },
+                        { name: "Map Fragment - North Liurnia", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Caelid",
+                level: "50-70",
+                upgrade: "+8 to +12",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Starscourge Radahn", type: "boss" },
+                        { name: "Commander O'Neil", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Redmane Castle", type: "dungeon" },
+                        { name: "Sellia, Town of Sorcery", type: "dungeon" }
+                    ]},
+                    { group: "NPCs", tasks: [
+                        { name: "Talk to Millicent in Church of Plague", type: "npc" },
+                        { name: "Find Gowry", type: "npc" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Map Fragment - Caelid", type: "item" },
+                        { name: "Map Fragment - Dragonbarrow", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Altus Plateau",
+                level: "60-80",
+                upgrade: "+12 to +18",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Godskin Apostle", type: "boss" },
+                        { name: "Draconic Tree Sentinel", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Volcano Manor", type: "dungeon" },
+                        { name: "Shaded Castle", type: "dungeon" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Map Fragment - Altus Plateau", type: "item" },
+                        { name: "Map Fragment - Mt. Gelmir", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Leyndell, Royal Capital",
+                level: "70-90",
+                upgrade: "+15 to +20",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Godfrey, First Elden Lord (Golden Shade)", type: "boss" },
+                        { name: "Morgott, the Omen King", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Leyndell Royal Capital", type: "dungeon" },
+                        { name: "Subterranean Shunning-Grounds", type: "dungeon" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Map Fragment - Leyndell", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Mountaintops of the Giants",
+                level: "90-110",
+                upgrade: "+20 to +24",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Fire Giant", type: "boss" }
+                    ]},
+                    { group: "Important Items", tasks: [
+                        { name: "Map Fragment - Mountaintops East", type: "item" },
+                        { name: "Map Fragment - Mountaintops West", type: "item" }
+                    ]}
+                ]
+            },
+            {
+                name: "Crumbling Farum Azula",
+                level: "100-120",
+                upgrade: "+24 to +25",
+                tasks: [
+                    { group: "Main Bosses", tasks: [
+                        { name: "Godskin Duo", type: "boss" },
+                        { name: "Maliketh, the Black Blade", type: "boss" },
+                        { name: "Dragonlord Placidusax (optional)", type: "boss" }
+                    ]},
+                    { group: "Dungeons", tasks: [
+                        { name: "Crumbling Farum Azula", type: "dungeon" }
+                    ]}
+                ]
+            },
+            {
+                name: "Endgame",
+                level: "110-150",
+                upgrade: "+25",
+                tasks: [
+                    { group: "Final Bosses", tasks: [
+                        { name: "Hoarah Loux / Godfrey", type: "boss" },
+                        { name: "Radagon of the Golden Order", type: "boss" },
+                        { name: "Elden Beast", type: "boss" }
+                    ]},
+                    { group: "Optional Areas", tasks: [
+                        { name: "Mohgwyn Palace - Mohg, Lord of Blood", type: "boss" },
+                        { name: "Haligtree - Malenia, Blade of Miquella", type: "boss" }
+                    ]}
+                ]
+            }
+        ];
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const progress = {};
+            checkboxes.forEach(cb => {
+                progress[cb.id] = cb.checked;
+            });
+            localStorage.setItem('eldenRingProgress', JSON.stringify(progress));
+            updateStats();
+        }
+
+        function loadProgress() {
+            const saved = localStorage.getItem('eldenRingProgress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                Object.keys(progress).forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = progress[id];
+                        if (progress[id]) {
+                            checkbox.parentElement.classList.add('completed');
+                        }
+                    }
+                });
+            }
+            updateStats();
+        }
+
+        function updateStats() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            let completed = 0;
+            let bossesDefeated = 0;
+
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    completed++;
+                    if (cb.dataset.type === 'boss') {
+                        bossesDefeated++;
+                    }
+                }
+            });
+
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('overall-percent').textContent = percent + '%';
+            document.getElementById('completed-count').textContent = completed;
+            document.getElementById('total-count').textContent = total;
+            document.getElementById('bosses-count').textContent = bossesDefeated;
+
+            // Update region progress bars
+            regions.forEach((region, index) => {
+                const regionCheckboxes = document.querySelectorAll(`#region-${index} input[type="checkbox"]`);
+                const regionTotal = regionCheckboxes.length;
+                let regionCompleted = 0;
+
+                regionCheckboxes.forEach(cb => {
+                    if (cb.checked) regionCompleted++;
+                });
+
+                const regionPercent = regionTotal > 0 ? (regionCompleted / regionTotal) * 100 : 0;
+                const progressBar = document.querySelector(`#region-${index} .progress-fill`);
+                if (progressBar) {
+                    progressBar.style.width = regionPercent + '%';
+                }
+
+                const metaText = document.querySelector(`#region-${index} .region-meta`);
+                if (metaText) {
+                    metaText.innerHTML = `Level ${region.level} | Weapon ${region.upgrade}<br>${regionCompleted}/${regionTotal} completed`;
+                }
+            });
+        }
+
+        function renderRegions() {
+            const container = document.getElementById('regions');
+            
+            regions.forEach((region, regionIndex) => {
+                const regionDiv = document.createElement('div');
+                regionDiv.className = 'region';
+                regionDiv.id = `region-${regionIndex}`;
+
+                let tasksHTML = '';
+                let taskCounter = 0;
+
+                region.tasks.forEach(taskGroup => {
+                    tasksHTML += `<div class="task-group">
+                        <div class="task-group-title">${taskGroup.group}</div>`;
+                    
+                    taskGroup.tasks.forEach(task => {
+                        const taskId = `task-${regionIndex}-${taskCounter++}`;
+                        tasksHTML += `
+                            <div class="task">
+                                <input type="checkbox" id="${taskId}" data-type="${task.type}" onchange="saveProgress()">
+                                <label class="task-label" for="${taskId}">${task.name}</label>
+                                <span class="task-type ${task.type}">${task.type.toUpperCase()}</span>
+                            </div>`;
+                    });
+                    
+                    tasksHTML += `</div>`;
+                });
+
+                regionDiv.innerHTML = `
+                    <div class="region-header" onclick="toggleRegion(${regionIndex})">
+                        <div>
+                            <div class="region-title">
+                                ${region.name}
+                                <span class="expand-icon">▼</span>
+                            </div>
+                            <div class="region-meta">Level ${region.level} | Weapon ${region.upgrade}</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="region-content">
+                        ${tasksHTML}
+                    </div>
+                `;
+
+                container.appendChild(regionDiv);
+            });
+
+            loadProgress();
+        }
+
+        function toggleRegion(index) {
+            const region = document.getElementById(`region-${index}`);
+            region.classList.toggle('expanded');
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.region').forEach(r => r.classList.add('expanded'));
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.region').forEach(r => r.classList.remove('expanded'));
+        }
+
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                localStorage.removeItem('eldenRingProgress');
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                    cb.parentElement.classList.remove('completed');
+                });
+                updateStats();
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            renderRegions();
+            
+            // Add checkbox change handler
+            document.addEventListener('change', (e) => {
+                if (e.target.type === 'checkbox') {
+                    if (e.target.checked) {
+                        e.target.parentElement.classList.add('completed');
+                    } else {
+                        e.target.parentElement.classList.remove('completed');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
